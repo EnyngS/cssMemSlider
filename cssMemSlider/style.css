@@ -12,9 +12,11 @@ body {
 }
 .container {
   height: 60vh;
-  margin: 100px auto 0;
+  margin: 0 auto;
+  /* padding-top: 100px; */
   position: relative;
   max-width: 900px;
+  margin-top: 50px;
 }
 
 .slider {
@@ -60,17 +62,41 @@ body {
   transform: translateY(0%);
 }
 
-.container > input {
+input {
   display: none;
 }
-
-.container .controls {
-  left: 50%;
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 10px;
+}
+.text {
+  opacity: 0;
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  /* width: 100%; */
+  z-index: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+}
+#item1:checked ~ .panel > .desc > .text1,
+#item2:checked ~ .panel > .desc > .text2,
+#item3:checked ~ .panel > .desc .text3,
+#item4:checked ~ .panel > .desc .text4,
+#item5:checked ~ .panel > .desc .text5 {
+  opacity: 1;
+  z-index: 1;
+  transform: translateX(0%);
+}
+.controls {
+  left: 80%;
   margin-left: -98px;
   position: absolute;
 }
 
-.container label {
+label {
   cursor: pointer;
   display: inline-block;
   padding: 5px;
@@ -78,13 +104,12 @@ body {
   margin: 25px 12px 0 16px;
   position: relative;
   width: 8px;
-  /* background-color: red; */
   border-radius: 50%;
   transition: all 0.5s;
   border: 2px solid rgb(216, 252, 55);
 }
 
-.container label:hover,
+label:hover,
 #item1:checked ~ .controls .label1,
 #item2:checked ~ .controls .label2,
 #item3:checked ~ .controls .label3,
@@ -93,7 +118,7 @@ body {
   background: rgb(255, 9, 9);
 }
 
-.container label:after {
+label:after {
   padding: 15px;
   /* border: 2px solid #ddd; */
   content: " ";
