@@ -68,7 +68,6 @@ input {
 .panel {
   display: flex;
   align-items: center;
-  /* justify-content: space-evenly; */
   padding: 30px 10px;
 }
 
@@ -79,7 +78,6 @@ input {
   position: absolute;
   color: white;
   font-size: 20px;
-  /* width: 100%; */
   z-index: 0;
   transform: translateX(-100%);
   transition: all 0.5s;
@@ -123,7 +121,6 @@ label:hover,
 
 label:after {
   padding: 15px;
-  /* border: 2px solid #ddd; */
   content: " ";
   display: block;
   height: 12px;
@@ -131,20 +128,15 @@ label:after {
   position: absolute;
   top: -15px;
   width: 12px;
-  /* background-color: red; */
-  /* border-radius: 50%; */
 }
 @media (max-width: 767px) {
   .panel {
-    /* flex-direction: column; */
     display: block;
     text-align: center;
     margin: 0 auto;
   }
   .text {
     margin-top: 100px;
-    /* order: 2; */
-    /* left: 50%; */
     text-align: left;
     background-color: transparent;
   }
@@ -157,7 +149,6 @@ label:after {
   .controls {
     padding-top: 0px;
     left: 47%;
-    /* margin-left: -98px; */
     position: absolute;
   }
 }
